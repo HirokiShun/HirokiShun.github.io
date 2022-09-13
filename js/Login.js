@@ -87,16 +87,16 @@ formulario.addEventListener('submit', (e) => {
 	if(campos.usuario && campos.nombre && campos.password && campos.correo ){
 		formulario.reset();
 
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+		document.getElementById('login-form__message-success').classList.add('login-form__message-success-active');
 		setTimeout(() => {
-			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+			document.getElementById('login-form__message-success').classList.remove('login-form__message-success-active');
 		}, 5000);
 
-		document.querySelectorAll('.formulario__grupo-correct').forEach((icono) => {
-			icono.classList.remove('formulario__grupo-correct');
+		document.querySelectorAll('.login-form__group-correct').forEach((icono) => {
+			icono.classList.remove('login-form__group-correct');
 		});
 	} else {
-		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+		document.getElementById('login-form__message').classList.add('login-form__message-active');
 	}
 })
 });
