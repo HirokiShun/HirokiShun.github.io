@@ -531,8 +531,9 @@ a{color:inherit;text-decoration:none}
 	max-width:525px;
 	min-height:670px;
 	position:relative;
-	background: url("img/TBBackGrd.jpg") no-repeat center;
+	background-image: url('../img/TBBackGrd.jpg') ;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+  
 }
 .login-html{
 	width:100%;
@@ -655,6 +656,137 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
 	transform:rotate(0);
 }
+
+
+
+
+.login-form__input:focus {
+	border: 3px solid #0075FF;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.login-form__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.login-form__input-error-active {
+	display: block;
+  color: white;
+}
+
+.login-form__validation-status {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.login-form__checkbox {
+	margin-right: 10px;
+}
+
+.login-form__message,
+.login-form__group-btn-send {
+	grid-column: span 2;
+}
+
+.login-form__message{
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.login-form__message-active {
+	display: block;
+}
+
+.login-form__message p {
+	margin: 0;
+}
+
+.login-form__group-btn-send {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-form__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+}
+
+.login-form__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+.login-form__message-success {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.login-form__message-success-active {
+	display: block;
+}
+
+/* ----- -----  Estilos para validation ----- ----- */
+.login-form__group-correct .login-form__validation-status {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.login-form__group-incorrect .login-form__label {
+	color: #bb2929;
+}
+
+.login-form__group-incorrect .login-form__validation-status {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.login-form__group-incorrect .login-form__input {
+	border: 3px solid #bb2929;
+}
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.login-form {
+		grid-template-columns: 1fr;
+	}
+ 
+	.login-form__message,
+	.login-form__group-btn-send {
+		grid-column: 1;
+	}
+
+	.login-form__btn {
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+
 
 .hr{
 	height:2px;
@@ -1063,4 +1195,136 @@ a{color:inherit;text-decoration:none}
       height: calc(100vh - 350px);
       overflow-x: auto
   }
+}
+
+
+.mainscreen
+{
+	min-height: 50vh;
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+    background-color: #DFDBE5;
+    background-image: url("../img/TBBackGrd.jpg") ;
+    color:#963E7B;
+}
+
+.cardChck {
+	width: 60rem;
+    margin: auto;
+    background: white;
+    position:center;
+    align-self: center;
+    top: 50rem;
+    border-radius: 1.5rem;
+    box-shadow: 4px 3px 20px #3535358c;
+    display:flex;
+    flex-direction: row;
+    
+}
+
+.leftside {
+	background: #030303;
+	width: 25rem;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+
+.productChck {
+    object-fit: cover;
+	width: 20em;
+    height: 20em;
+    border-radius: 100%;
+}
+
+.rightside {
+    background-color: #ffffff;
+	width: 35rem;
+	border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem 2rem 3rem 3rem;
+}
+
+p{
+    display:block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: .8rem 0;
+}
+
+.inputbox
+{
+    color:#030303;
+	width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    font-family: 'Roboto', sans-serif;
+    color: #615a5a;
+    font-size: 1.1rem;
+    font-weight: 500;
+  outline:none;
+}
+
+.expcvv {
+    display:flex;
+    justify-content: space-between;
+    padding-top: 0.6rem;
+}
+
+.expcvv_text{
+    padding-right: 1rem;
+}
+.expcvv_text2{
+    padding:0 1rem;
+}
+
+.button{
+    background: linear-gradient(
+135deg
+, #753370 0%, #298096 100%);
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    width:100%;
+    letter-spacing: .11rem;
+    outline:none;
+}
+
+.buttonChck:hover
+{
+	transform: scale(1.05) translateY(-3px);
+    box-shadow: 3px 3px 6px #38373785;
+}
+
+@media only screen and (max-width: 1000px) {
+    .cardChck{
+        flex-direction: column;
+        width: auto;
+      
+    }
+
+    .leftside{
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+      border-top-right-radius:0;
+      border-radius:0;
+    }
+
+    .rightside{
+        width:auto;
+        border-bottom-left-radius: 1.5rem;
+        padding:0.5rem 3rem 3rem 2rem;
+      border-radius:0;
+    }
 }

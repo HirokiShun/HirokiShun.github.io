@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/myStyle.css">
-    <script src="js/Login.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/Login.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script>
         const triggerTabList = document.querySelectorAll('#myTab button')
         triggerTabList.forEach(triggerEl => {
@@ -39,53 +43,118 @@
                 <div class="login-form">
                     <div class="sign-in-htm">
                         <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="user" type="text" class="input">
+                            <label for="Loguser" class="label">Nombre de usuario</label>
+                            <input id="Loguser" type="text" class="input">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <label for="Logpass" class="label">Contraseña</label>
+                            <input id="Logpass" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
                             <input id="check" type="checkbox" class="check" checked>
-                            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                            <label for="check"><span class="icon"></span> Mantener sesion iniciada</label>
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Sign In">
                         </div>
                         <div class="hr"></div>
-                        <div class="foot-lnk">
-                            <a href="#forgot">Forgot Password?</a>
-                        </div>
                     </div>
-                    <div class="sign-up-htm">
-                        <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="user" type="text" class="input">
+
+                    <!-- Rol de usuario.•Imagen tipo avatar.•Nombre Completo•Fecha de nacimiento•Sexo -->
+
+                    <div class="sign-up-htm" id="Register">
+
+                        <div class="group" id="group__user">
+                            <label for="user" class="label">Nombre de usuario</label>
+                            <div class="login-form__group">
+                            <input id="user" type="text" class="input" name="user">
+                            <i class="login-form__validation-status fas fa-times-circle"></i>
                         </div>
-                        <div class="group">
-                            <label for="pass" class="label">Password</label>
+                            <p class="login-form__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+                          
+                        </div>
+                        <div class="group" id="group__Name">
+                            <label for="Name" class="label">Nombre completo</label>
+                            <div class="login-form__group">
+                            <input id="Name" type="text" class="input" name="Name">
+                            <i class="login-form__validation-status fas fa-times-circle"></i>
+                        </div>
+                            <p class="login-form__input-error">Este campo solo acepta letras</p>
+                        
+                        </div>
+                       
+                        <div class="group" id= "group__pass">
+                            <label for="pass" class="label">Contraseña</label>
+                            <div class="login-form__group">
                             <input id="pass" type="password" class="input" data-type="password">
+                            <i class="login-form__validation-status fas fa-times-circle"></i>
                         </div>
-                        <div class="group">
-                            <label for="pass" class="label">Repeat Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <p class="login-form__input-error">La Contraseña debe contener al menos 4 caracteres</p>
                         </div>
-                        <div class="group">
-                            <label for="pass" class="label">Email Address</label>
-                            <input id="pass" type="text" class="input">
+                        <div class="group" id="group__RepeatPass">
+                            <label for="RepeatPass" class="label">Repetir Contraseña</label>
+                            <div class="login-form__group">
+                            <input id="RepeatPass" type="password" class="input" data-type="password" name="pass">
+                            <i class="login-form__validation-status fas fa-times-circle"></i>
                         </div>
+                            <p class="login-form__input-error">Las contraseñas no coinciden</p>
+                            
+                        </div>
+                        <div class="group" id="group__Email">
+                            <label for="Email" class="label">Correo electronico</label>
+                            <div class="login-form__group">
+                            <input id="Email" type="text" class="input" name="Emai">
+                            <i class="login-form__validation-status fas fa-times-circle"></i>
+                            </div>
+                            <p class="login-form__input-error">Correo no valido</p>
+                            
+                        </div>
+
+                        <div class="group" id="group__Sell-Buy">
+                            <label for="Sell-Buy" class="label">Quiero...</label>
+                            <div id="Sell-Buy">
+                                <input id="Buy" type="checkbox" class="input">Comprar</input>
+                                <input id="Sell" type="checkbox" class="input">Vender</input>
+                            </div>
+                        </div>
+                        <div class="group" id="group__AvtrImg">
+                            <label for="AvtrImg" class="label">Avatar</label>
+                            <input id="AvtrImg" type="file" class="input">
+                        </div>
+                       
+                        <div class="group" id="group___Birthday">
+                            <label for="Birthday" class="label">fecha de nacimiento</label>
+                            <input id="Birthday" type="date" class="input">
+                        </div>
+                        <div class="group" id="group__Genere">
+                            <label for="Genere" class="label">Sexo</label>
+                            <div id="Genere">
+                                <input id="pass" type="radio" class="input">Masculino</input>
+                                <input id="pass" type="radio" class="input">Femenino</input>
+                            </div>
+                        </div>
+                        
+
                         <div class="group">
-                            <input type="submit" class="button" value="Sign Up">
+                            <button type="submit" class="button login-form__button" value="Sign Up"></button>
+
+                                <div class="login-form message" id="login-form__message">
+                                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                                    <p class="login-form message-success" id="login-form__message-success">Formulario enviado exitosamente!</p>
+                                </div>
                         </div>
                         <div class="hr"></div>
+                        
                         <div class="foot-lnk">
-                            <label for="tab-1">Already Member?</a>
+                            <label for="tab-1">Ya estas registrado?</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+
+            
+
+       </div>
 
        
             </div>
@@ -95,25 +164,28 @@
     </div>
     </div>
 
-    <footer class="site-footer sticky-md-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <h6>About</h6>
-                    <p class="text-justify">Stickybook.com Es una pagina de notas personales, con amplia dedicacion a
-                        proveerle una herramienta sencilla e intuitiva, que resulte util en su dia a dia.</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
-                        <a href="#">Scanfcode</a>.
-                    </p>
-                </div>
-    </footer>
+    
 </body>
+
+
+<footer class="site-footer ">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>About</h6>
+                <p class="text-justify">Stickybook.com Es una pagina de notas personales, con amplia dedicacion a
+                    proveerle una herramienta sencilla e intuitiva, que resulte util en su dia a dia.</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+                    <a href="#">Scanfcode</a>.
+                </p>
+            </div>
+</footer>
 
 </html>
