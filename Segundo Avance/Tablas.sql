@@ -14,7 +14,8 @@ create table Usuarios
 	Fecha_Nacimiento date,
 	sexo varchar(10),
 	Fecha_alta datetime,
-	Tipo_Perfil varchar(16)
+	Tipo_Perfil varchar(16),
+    Activo bit default 1 
 );
 
 create table Listas

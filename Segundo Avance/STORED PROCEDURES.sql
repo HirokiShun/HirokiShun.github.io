@@ -1,3 +1,4 @@
+Use tienda_pwci
 /*STORED PRODUCEDURES*/
 
 /*INSERTAR USUARIOS*/
@@ -11,7 +12,7 @@ CREATE PROCEDURE INSERT_Usuarios(
 				 pNombreCompleto varchar(100),
                  pFecha_Naci date,
                  pSexo varchar(10),
-				 Tipo_Pefil varchar(16)
+				 Tipo_Perfil varchar(16)
                  ) 
 BEGIN
 
@@ -24,7 +25,7 @@ INSERT INTO Usuarios(Correo,
                          Fecha_Nacimiento,
                          Sexo,
                          Fecha_alta,
-                         Tipo_Pefil)
+                         Tipo_Perfil)
     VALUES(pCorreo,
 			Pnickname,
 			pContraseña,
@@ -34,7 +35,7 @@ INSERT INTO Usuarios(Correo,
 			pFecha_Naci,
 			pSexo,
             NOW(),
-			Tipo_Pefil
+			Tipo_Perfil
 			);
 END //
 DELIMITER ;
@@ -51,35 +52,34 @@ CREATE PROCEDURE UPDATE_Usuarios(
 				 pNombreCompleto varchar(100),
                  pFecha_Naci date,
                  pSexo varchar(10),
-				 pTipo_Pefil varchar(16)
+				 pTipo_Perfil varchar(16)
                  ) 
 BEGIN
  UPDATE Usuarios
-SET Correo = pCorreo,
-	Nickname = Pnickname,
-    Contraseña = pContraseña,
-    Rol_Usuario = pRol_Usuario,
-    Imagen = pFoto,
-    NombreCompleto = pNombreCompleto,
-    Fecha_Nacimiento = pFecha_Naci,
-    sexo = pSexo,
-    Fecha_alta = NOW(),
-    Tipo_Pefil = pTipo_Perfil
+SET Correo = IFNULL(pCorreo,Correo) ,
+	Nickname = IFNULL(Pnickname,Nickname),
+    Contraseña = IFNULL(pContraseña,Contraseña),
+    Rol_Usuario = IFNULL(pRol_Usuario,Rol_Usuario),
+    Imagen = IFNULL(pFoto,Imagen),
+    NombreCompleto = IFNULL(pNombreCompleto,NombreCompleto),
+    Fecha_Nacimiento = IFNULL(pFecha_Naci,Fecha_Nacimiento),
+    sexo = IFNULL(pSexo,sexo),
+    Tipo_Perfil = IFNULL(pTipo_Perfil,Tipo_Perfil)
 where id = Pid;
 
 END //
 DELIMITER ;
 
 
-
-
-
 /*ELIMINAR USUARIOS*/
-/*SP para borrar EMPLEADOS/REPORTEROS*/
+/*SP para borrar Usuarios*/
 DELIMITER //
-CREATE PROCEDURE SP_DELETE_Reportero(pId int)
+CREATE PROCEDURE SP_DELETE_Usuario(pId int)
 Begin
-      delete from Usuarios where id=pId;
+		Update Usuarios 
+        Set
+			Activo=0
+        where id=pId;
 End //
 DELIMITER ;
 
