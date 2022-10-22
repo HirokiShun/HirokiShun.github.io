@@ -1,14 +1,9 @@
 <?php
 
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
-
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "murgrembdm";
+$dbname = "TIENDA_PWCI";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
@@ -17,15 +12,14 @@ $conn = new mysqli($servername, $username, $password,$dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully";
+//echo "Connected successfully";
 
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
+$sql = "select * from Usuarios";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  echo "Usuarios consultados";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo " Error: " . $sql . " , " . $conn->error;
 }
 
 $conn->close();
